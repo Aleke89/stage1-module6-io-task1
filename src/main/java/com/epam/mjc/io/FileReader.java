@@ -1,13 +1,8 @@
 package com.epam.mjc.io;
-
-import com.sun.source.tree.ArrayAccessTree;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
-
 public class FileReader {
 
     public Profile getDataFromFile(File file) {
@@ -38,9 +33,9 @@ public class FileReader {
             profile.setEmail(String.valueOf(email));
             profile.setPhone(Long.valueOf(phone.toString()));
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         return profile;
     }

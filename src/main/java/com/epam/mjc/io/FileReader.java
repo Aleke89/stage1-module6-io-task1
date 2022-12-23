@@ -32,10 +32,8 @@ public class FileReader {
             profile.setAge(Integer.valueOf(age.toString()));
             profile.setEmail(String.valueOf(email));
             profile.setPhone(Long.valueOf(phone.toString()));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
         return profile;
     }

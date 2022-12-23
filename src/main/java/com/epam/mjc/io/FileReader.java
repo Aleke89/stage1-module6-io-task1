@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 public class FileReader {
 
-    public Profile getDataFromFile(File file) {
+    public Profile getDataFromFile(File file){
         Profile profile = new Profile();
         try (BufferedReader bufferedReader = new BufferedReader(new java.io.FileReader(file))){
             String line = bufferedReader.readLine();
@@ -33,7 +33,7 @@ public class FileReader {
             profile.setEmail(String.valueOf(email));
             profile.setPhone(Long.valueOf(phone.toString()));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         return profile;
     }
